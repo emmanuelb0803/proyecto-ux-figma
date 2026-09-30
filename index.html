@@ -11,130 +11,95 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="#inicio" aria-label="Mi Pasaporte Turístico, inicio">
-        <img class="brand-mark" src="img/logo.png" alt="Mi Pasaporte Turístico" />
-        <span class="brand-copy"><strong>Mi Pasaporte Turístico</strong><small>Call-Valle del Cauca</small></span>
-      </a>
+    <main class="page-shell">
+      <header class="site-header">
+        <div class="brand" aria-label="Mi Pasaporte Turístico">
+          <div class="brand-mark-wrap">
+            <img src="img/logo.png" alt="Mi Pasaporte Turístico" />
+          </div>
+          <div class="brand-text">
+            <strong>Mi Pasaporte Turístico</strong>
+            <small>Call-Valle del Cauca</small>
+          </div>
+        </div>
 
-      <nav class="main-nav" aria-label="Navegación principal">
-        <a href="#inicio">Inicio</a>
-        <a href="#destino">Destino</a>
-        <a href="#datasets">Datasets</a>
-        <a href="#registro">Registro</a>
-        <a href="#nosotros">Nosotros</a>
-      </nav>
+        <nav class="main-nav" aria-label="Navegación principal">
+          <a href="#inicio">Inicio</a>
+          <a href="#destino">Destino</a>
+          <a href="#datasets">Datasets</a>
+          <a href="#registro">Registro</a>
+          <a href="#nosotros">Nosotros</a>
+        </nav>
 
-      <button class="profile-button" aria-label="Abrir perfil">
-        <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="10" r="6.5" /><path d="M3.5 29c1-7 5.2-10.5 12.5-10.5S27.5 22 28.5 29" /></svg>
-      </button>
+        <button class="profile-button" aria-label="Abrir perfil">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="10" r="6.5" /><path d="M3.5 29c1-7 5.2-10.5 12.5-10.5S27.5 22 28.5 29" /></svg>
+        </button>
+      </header>
 
-      <button class="menu-button" aria-label="Abrir menú" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </header>
+      <section class="hero-section" id="inicio" aria-label="Punto de información y registro">
+        <div class="hero-bg" role="img" aria-label="Paisaje del Valle del Cauca"></div>
+        <div class="hero-overlay"></div>
 
-    <main class="dataset-page">
-      <section class="dataset-hero" id="inicio" aria-label="Obtención y descripción del dataset">
-        <div class="dataset-hero-image" role="img" aria-label="Paisaje del Valle del Cauca"></div>
-        <div class="dataset-hero-overlay"></div>
-
-        <div class="dataset-hero-content">
-          <div class="dataset-badge" aria-hidden="true">
-            <img src="img/Vector.png" alt="" />
+        <div class="hero-content">
+          <div class="hero-pin" aria-hidden="true">
+            <img src="img/map-pinned.png" alt="" />
           </div>
 
-          <div class="dataset-hero-copy">
-            <h1>Obtención y Descripción del Dataset</h1>
-            <p>Datos abiertos para analizar el turismo de la región</p>
+          <div class="hero-copy">
+            <h1>Punto de Información y Registro</h1>
+            <p>Cuéntanos qué necesitas estamos para ayudarte</p>
           </div>
         </div>
       </section>
 
-      <section class="dataset-shell" aria-label="Dataset del turismo regional">
-        <div class="dataset-grid-top">
-          <article class="panel source-panel">
-            <div class="panel-title">
-              <img src="img/globe.png" alt="" />
-              <h3>Fuente de los datos</h3>
-            </div>
+      <section class="main-panel" aria-label="Formulario de registro">
+        <form class="form-card" id="regionalForm" novalidate>
+          <h2>¿Qué estás buscando en tu próximo viaje?</h2>
 
-            <div class="source-info">
-              <div class="source-badge">Datos Abiertos Colombia</div>
-              <p>Plataforma del Gobierno Nacional que pone a disposición información pública de distintos sectores.</p>
-              <a href="https://datos.gov.co/" class="source-link" target="_blank" rel="noopener noreferrer">Ir a la fuente <span>→</span></a>
-            </div>
-          </article>
+          <label class="field">
+            <span>Nombre completo</span>
+            <input type="text" name="nombre" placeholder="Ej: Juan Pérez García" required />
+          </label>
 
-          <article class="panel logo-panel logo-panel-image-only">
-            <div class="logo-art" aria-label="Datos Abiertos Colombia">
-              <img src="img/images (1).jpg" alt="Datos Abiertos Colombia" />
-            </div>
-          </article>
-        </div>
+          <label class="field">
+            <span>Correo electrónico</span>
+            <input type="email" name="email" placeholder="Ej: ejemplo@correo.com" required />
+          </label>
 
-        <div class="dataset-grid-bottom">
-          <article class="panel meta-panel">
-            <h3><img src="img/chart-column.png" alt="" /> Metadatos del dataset</h3>
-            <ul class="meta-list">
-              <li><span class="meta-label"><img src="img/globe.png" alt="" />Origen</span><strong>Datos Abiertos Colombia</strong></li>
-              <li><span class="meta-label"><img src="img/chart-column.png" alt="" />Número de registros</span><strong>1.248</strong></li>
-              <li><span class="meta-label"><img src="img/clipboard-list.png" alt="" />Número de variables</span><strong>5</strong></li>
-              <li><span class="meta-label"><img src="img/calendar-days (1).png" alt="" />Última actualización</span><strong>2024-12-15</strong></li>
-              <li><span class="meta-label"><img src="img/hotel.png" alt="" />Tipo de información</span><strong>Prestadores de servicios turísticos</strong></li>
-            </ul>
-          </article>
+          <label class="field">
+            <span>Tipo de visitante</span>
+            <select name="tipoVisitante" required>
+              <option value="">Selecciona una opción</option>
+              <option value="Turista">Turista</option>
+              <option value="Estudiante">Estudiante</option>
+              <option value="Empresario">Empresario</option>
+              <option value="Familia">Familia</option>
+            </select>
+          </label>
 
-          <article class="panel table-panel">
-            <h3><img src="img/clipboard-list.png" alt="" /> Descripción de las columnas</h3>
-            <div class="table-wrap">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Campo / Atributo</th>
-                    <th>Tipo de dato</th>
-                    <th>Descripción</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>nombre</td>
-                    <td>Texto</td>
-                    <td>Nombre del prestador de servicio</td>
-                  </tr>
-                  <tr>
-                    <td>municipio</td>
-                    <td>Texto</td>
-                    <td>Municipio donde se encuentra</td>
-                  </tr>
-                  <tr>
-                    <td>tipo_servicio</td>
-                    <td>Texto</td>
-                    <td>Tipo de servicio turístico ofrecido</td>
-                  </tr>
-                  <tr>
-                    <td>departamento</td>
-                    <td>Texto</td>
-                    <td>Departamento</td>
-                  </tr>
-                  <tr>
-                    <td>estado</td>
-                    <td>Texto</td>
-                    <td>Estado del registro</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+          <label class="field">
+            <span>Tipo de servicio de interés</span>
+            <select name="tipoServicio" required>
+              <option value="">Selecciona una opción</option>
+              <option value="Hospedaje">Hospedaje</option>
+              <option value="Gastronomía">Gastronomía</option>
+              <option value="Transporte">Transporte</option>
+              <option value="Tour">Tour</option>
+              <option value="Cultura">Cultura</option>
+            </select>
+          </label>
 
-            <div class="action-row">
-              <button class="btn btn-primary data-button" data-action="view"><img src="img/Icon_ eye.png" alt="" /> Ver datos</button>
-              <button class="btn btn-success data-button" data-action="csv"><img src="img/Icon_ download.png" alt="" /> Descargar CSV</button>
-              <button class="btn btn-violet data-button" data-action="json"><img src="img/Icon_ download (1).png" alt="" /> Descargar JSON</button>
-            </div>
-          </article>
-        </div>
+          <label class="field field-message">
+            <span>Mensaje o Comentario</span>
+            <textarea name="mensaje" rows="4" placeholder="Escribe aquí tu mensaje..."></textarea>
+          </label>
+
+          <div class="required-note" aria-live="polite">Este campo es obligatorio</div>
+
+          <button type="submit" class="submit-button">Enviar</button>
+
+          <div class="form-status" id="formStatus" aria-live="polite"></div>
+        </form>
       </section>
     </main>
 

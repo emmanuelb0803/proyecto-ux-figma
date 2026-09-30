@@ -13,90 +13,68 @@ nav?.querySelectorAll('a').forEach((link) => {
   });
 });
 
-const tourismData = [
-  {
-    nombre: 'Hotel La Candelaria',
-    municipio: 'Dovio',
-    tipo_servicio: 'Hotel',
-    departamento: 'Valle del Cauca',
-    estado: 'Activo'
-  },
-  {
-    nombre: 'Café del Valle Tours',
-    municipio: 'Guacarí',
-    tipo_servicio: 'Tour guiado',
-    departamento: 'Valle del Cauca',
-    estado: 'Activo'
-  },
-  {
-    nombre: 'Aventura Los Andes',
-    municipio: 'Buga',
-    tipo_servicio: 'Aventura',
-    departamento: 'Valle del Cauca',
-    estado: 'Activo'
-  },
-  {
-    nombre: 'Mirador del Río',
-    municipio: 'Yotoco',
-    tipo_servicio: 'Restaurant',
-    departamento: 'Valle del Cauca',
-    estado: 'Activo'
-  },
-  {
-    nombre: 'Parque de la Cultura',
-    municipio: 'Palmira',
-    tipo_servicio: 'Cultural',
-    departamento: 'Valle del Cauca',
-    estado: 'Activo'
+const form = document.getElementById('regionalForm');
+const formStatus = document.getElementById('formStatus');
+const requiredNote = document.querySelector('.required-note');
+
+const getStoredRegistrations = () => {
+  try {
+    const stored = localStorage.getItem('regionalRegistrations');
+    return stored ? JSON.parse(stored) : [];
+  } catch (error) {
+    return [];
   }
-];
-
-const toCSV = (rows) => {
-  const headers = ['nombre', 'municipio', 'tipo_servicio', 'departamento', 'estado'];
-  const csvRows = [headers.join(',')];
-
-  rows.forEach((row) => {
-    const values = headers.map((header) => `"${String(row[header] ?? '').replace(/"/g, '""')}"`);
-    csvRows.push(values.join(','));
-  });
-
-  return csvRows.join('\n');
 };
 
-const downloadFile = (content, filename, type) => {
-  const blob = new Blob([content], { type });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement('a');
-  link.href = url;
-  link.download = filename;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-  URL.revokeObjectURL(url);
+const saveRegistration = (payload) => {
+  const registrations = getStoredRegistrations();
+  registrations.push(payload);
+  localStorage.setItem('regionalRegistrations', JSON.stringify(registrations));
 };
 
-document.querySelectorAll('.data-button').forEach((button) => {
-  button.addEventListener('click', () => {
-    const action = button.dataset.action;
+const showFormMessage = (message, type) => {
+  if (!formStatus) return;
+  formStatus.textContent = message;
+  formStatus.className = `form-status ${type}`;
+};
 
-    if (action === 'view') {
-      const json = JSON.stringify(tourismData, null, 2);
-      const newWindow = window.open('', '_blank');
+const validateRequiredFields = () => {
+  const requiredFields = form?.querySelectorAll('input[required], select[required]');
 
-      if (newWindow) {
-        newWindow.document.write(`<!doctype html><html><head><title>Ver datos</title><style>body{font-family:Arial,sans-serif;padding:24px;line-height:1.5;}pre{white-space:pre-wrap;word-break:break-word;}</style></head><body><pre>${json}</pre></body></html>`);
-        newWindow.document.close();
-      }
-      return;
-    }
+  let isValid = true;
 
-    if (action === 'csv') {
-      downloadFile(toCSV(tourismData), 'prestadores_turisticos.csv', 'text/csv;charset=utf-8;');
-      return;
-    }
-
-    if (action === 'json') {
-      downloadFile(JSON.stringify(tourismData, null, 2), 'prestadores_turisticos.json', 'application/json;charset=utf-8;');
+  requiredFields?.forEach((field) => {
+    const value = field.value.trim();
+    if (!value) {
+      isValid = false;
+      field.setAttribute('aria-invalid', 'true');
+    } else {
+      field.setAttribute('aria-invalid', 'false');
     }
   });
+
+  if (!isValid && requiredNote) {
+    requiredNote.style.display = 'block';
+  } else if (requiredNote) {
+    requiredNote.style.display = 'none';
+  }
+
+  return isValid;
+};
+
+form?.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  if (!form.checkValidity() || !validateRequiredFields()) {
+    showFormMessage('Completa los campos obligatorios antes de enviar.', 'error');
+    form.reportValidity();
+    return;
+  }
+
+  const formData = new FormData(form);
+  const payload = Object.fromEntries(formData.entries());
+
+  saveRegistration(payload);
+  form.reset();
+  showFormMessage('¡Solicitud enviada correctamente!', 'success');
 });
