@@ -179,13 +179,13 @@ svg { display: block; }
 .side-nav {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 18px;
 }
 .nav-item {
   color: #4f6373;
   font-size: 16px;
   font-weight: 500;
-  line-height: 1.4;
+  line-height: 1.5;
   padding-left: 4px;
   transition: color 0.2s ease;
 }
@@ -197,14 +197,14 @@ svg { display: block; }
 .content-panel {
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: 48px;
 }
 .content-block {
   width: 100%;
 }
 .content-block h2,
 .content-block h3 {
-  margin: 0 0 14px;
+  margin: 0 0 18px;
   color: var(--dark);
 }
 .content-block h2 {
@@ -225,7 +225,7 @@ svg { display: block; }
   margin: 0;
   font-size: 20px;
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 1.7;
   color: #586974;
 }
 
@@ -312,11 +312,11 @@ svg { display: block; }
   letter-spacing: -0.5px;
 }
 .service-text {
-  margin-top: 7px;
+  margin-top: 10px;
   color: var(--muted);
   font-size: 14px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 1.6;
 }
 .service-value {
   font-size: 18px;
