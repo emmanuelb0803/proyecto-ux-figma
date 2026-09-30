@@ -36,138 +36,104 @@
       </button>
     </header>
 
-    <main class="regional-page">
-      <section class="hero" id="inicio" aria-label="Contexto regional del turismo en el Valle del Cauca">
-        <div class="hero-image" role="img" aria-label="Paisaje natural del Valle del Cauca"></div>
-        <div class="hero-overlay"></div>
+    <main class="dataset-page">
+      <section class="dataset-hero" id="inicio" aria-label="Obtención y descripción del dataset">
+        <div class="dataset-hero-image" role="img" aria-label="Paisaje del Valle del Cauca"></div>
+        <div class="dataset-hero-overlay"></div>
 
-        <div class="hero-content">
-          <div class="map-badge" aria-hidden="true">
+        <div class="dataset-hero-content">
+          <div class="dataset-badge" aria-hidden="true">
             <img src="img/Vector.png" alt="" />
           </div>
 
-          <div class="hero-copy">
-            <h1>Contexto Regional</h1>
-            <p>El turismo, un motor de desarrollo para nuestra región</p>
+          <div class="dataset-hero-copy">
+            <h1>Obtención y Descripción del Dataset</h1>
+            <p>Datos abiertos para analizar el turismo de la región</p>
           </div>
         </div>
       </section>
 
-      <section class="dashboard-layout" aria-label="Contenido de contexto regional">
-        <aside class="side-panel" aria-label="Navegación del contexto regional">
-          <nav class="side-nav">
-            <a class="nav-item active" href="#descripcion">Descripción del sector</a>
-            <a class="nav-item" href="#importancia">Importancia</a>
-            <a class="nav-item" href="#impacto">Impacto regional</a>
-            <a class="nav-item" href="#productos">Productos y servicios</a>
-            <a class="nav-item" href="#valor">Valor agregado</a>
-            <a class="nav-item" href="#innovacion">Problemática e innovación</a>
-          </nav>
-        </aside>
-
-        <div class="content-panel">
-          <section class="content-block intro" id="descripcion">
-            <h2>¿Qué es el sector turístico?</h2>
-            <p>culturales recreativas y logísticas que realizan las personas durante sus viajes y estancias en lugares distintos</p>
-          </section>
-
-          <section class="content-block" id="importancia">
-            <h3>Importancia y valor agregado</h3>
-            <p>El turismo es uno de los motores de desarrollo socioeconómico más influyentes a nivel mundial y nacional. Genera empleo, atrae inversión, dinamiza la economía y fortalece la identidad cultural y ambiental de la región.</p>
-          </section>
-
-          <section class="content-block info-card" id="impacto">
-            <div class="card-image" aria-hidden="true"></div>
-            <h3>Impacto regional en cifras</h3>
-            <div class="stats-row">
-              <div class="stat-item">
-                <strong>1.248</strong>
-                <span>Prestadores registrados</span>
-              </div>
-              <div class="stat-item">
-                <strong>6+</strong>
-                <span>Municipios cubiertos</span>
-              </div>
-              <div class="stat-item">
-                <strong>5</strong>
-                <span>Tipos de servicio</span>
-              </div>
-            </div>
-          </section>
-
-          <section class="content-block products" id="productos">
-            <h3>Productos y servicios turísticos</h3>
-
-            <div class="service-row">
-              <div class="service-icon"><img src="img/bed-double.png" alt="Alojamiento" /></div>
-              <div class="service-copy">
-                <div class="service-title">Alojamiento</div>
-                <div class="service-text">Hoteles, hostales, posadas y apartahoteles en toda la región.</div>
-              </div>
-              <div class="service-value">22%</div>
-              <div class="service-meter"><span style="width: 22%"></span></div>
+      <section class="dataset-shell" aria-label="Dataset del turismo regional">
+        <div class="dataset-grid-top">
+          <article class="panel source-panel">
+            <div class="panel-title">
+              <img src="img/globe.png" alt="" />
+              <h3>Fuente de los datos</h3>
             </div>
 
-            <div class="service-row">
-              <div class="service-icon"><img src="img/Group%20(3).png" alt="Gastronomía" /></div>
-              <div class="service-copy">
-                <div class="service-title">Gastronomía</div>
-                <div class="service-text">Restaurantes, plazas de mercado y experiencias culinarias locales.</div>
-              </div>
-              <div class="service-value">18%</div>
-              <div class="service-meter"><span style="width: 18%"></span></div>
+            <div class="source-info">
+              <div class="source-badge">Datos Abiertos Colombia</div>
+              <p>Plataforma del Gobierno Nacional que pone a disposición información pública de distintos sectores.</p>
+              <a href="https://datos.gov.co/" class="source-link" target="_blank" rel="noopener noreferrer">Ir a la fuente <span>→</span></a>
+            </div>
+          </article>
+
+          <article class="panel logo-panel logo-panel-image-only">
+            <div class="logo-art" aria-label="Datos Abiertos Colombia">
+              <img src="img/images (1).jpg" alt="Datos Abiertos Colombia" />
+            </div>
+          </article>
+        </div>
+
+        <div class="dataset-grid-bottom">
+          <article class="panel meta-panel">
+            <h3><img src="img/chart-column.png" alt="" /> Metadatos del dataset</h3>
+            <ul class="meta-list">
+              <li><span class="meta-label"><img src="img/globe.png" alt="" />Origen</span><strong>Datos Abiertos Colombia</strong></li>
+              <li><span class="meta-label"><img src="img/chart-column.png" alt="" />Número de registros</span><strong>1.248</strong></li>
+              <li><span class="meta-label"><img src="img/clipboard-list.png" alt="" />Número de variables</span><strong>5</strong></li>
+              <li><span class="meta-label"><img src="img/calendar-days (1).png" alt="" />Última actualización</span><strong>2024-12-15</strong></li>
+              <li><span class="meta-label"><img src="img/hotel.png" alt="" />Tipo de información</span><strong>Prestadores de servicios turísticos</strong></li>
+            </ul>
+          </article>
+
+          <article class="panel table-panel">
+            <h3><img src="img/clipboard-list.png" alt="" /> Descripción de las columnas</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Campo / Atributo</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>nombre</td>
+                    <td>Texto</td>
+                    <td>Nombre del prestador de servicio</td>
+                  </tr>
+                  <tr>
+                    <td>municipio</td>
+                    <td>Texto</td>
+                    <td>Municipio donde se encuentra</td>
+                  </tr>
+                  <tr>
+                    <td>tipo_servicio</td>
+                    <td>Texto</td>
+                    <td>Tipo de servicio turístico ofrecido</td>
+                  </tr>
+                  <tr>
+                    <td>departamento</td>
+                    <td>Texto</td>
+                    <td>Departamento</td>
+                  </tr>
+                  <tr>
+                    <td>estado</td>
+                    <td>Texto</td>
+                    <td>Estado del registro</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
 
-            <div class="service-row">
-              <div class="service-icon"><img src="img/Vector%20(2).png" alt="Transporte" /></div>
-              <div class="service-copy">
-                <div class="service-title">Transporte</div>
-                <div class="service-text">Empresas de transporte turístico terrestre y fluvial.</div>
-              </div>
-              <div class="service-value">15%</div>
-              <div class="service-meter"><span style="width: 15%"></span></div>
+            <div class="action-row">
+              <button class="btn btn-primary data-button" data-action="view"><img src="img/Icon_ eye.png" alt="" /> Ver datos</button>
+              <button class="btn btn-success data-button" data-action="csv"><img src="img/Icon_ download.png" alt="" /> Descargar CSV</button>
+              <button class="btn btn-violet data-button" data-action="json"><img src="img/Icon_ download (1).png" alt="" /> Descargar JSON</button>
             </div>
-
-            <div class="service-row">
-              <div class="service-icon"><img src="img/leaf.png" alt="Ecoturismo" /></div>
-              <div class="service-copy">
-                <div class="service-title">Ecoturismo</div>
-                <div class="service-text">Parques naturales, senderismo y turismo de aventura en el Valle.</div>
-              </div>
-              <div class="service-value">8%</div>
-              <div class="service-meter"><span style="width: 8%"></span></div>
-            </div>
-          </section>
-
-          <section class="content-block value-card" id="valor">
-            <div class="value-image" aria-hidden="true"></div>
-            <h3>Valor agregado del turismo regional</h3>
-            <p>La biodiversidad del Valle del Cauca, la riqueza cultural de Cali —capital mundial de la salsa— y la gastronomía regional crean una propuesta turística única. La combinación de turismo urbano, cultural, de naturaleza y de negocios posiciona al departamento como destino integral en Colombia.</p>
-          </section>
-
-          <section class="content-block innovation" id="innovacion">
-            <h2>¿Por qué es necesaria la innovación?</h2>
-            <p>La transformación digital y el uso de datos permiten mejorar la experiencia del turista, optimizar la gestión del sector y promover un turismo más sostenible y competitivo en Cali y el Valle del Cauca.</p>
-
-            <div class="innovation-grid">
-              <div class="innovation-item">
-                <span>✓</span>
-                <strong>Plataformas digitales de reserva</strong>
-              </div>
-              <div class="innovation-item">
-                <span>✓</span>
-                <strong>Datos abiertos para la toma de decisiones</strong>
-              </div>
-              <div class="innovation-item">
-                <span>✓</span>
-                <strong>Marketing turístico digital</strong>
-              </div>
-              <div class="innovation-item">
-                <span>✓</span>
-                <strong>Sostenibilidad ambiental</strong>
-              </div>
-            </div>
-          </section>
+          </article>
         </div>
       </section>
     </main>
