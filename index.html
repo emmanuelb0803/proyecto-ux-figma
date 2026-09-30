@@ -36,70 +36,118 @@
         </button>
       </header>
 
-      <section class="hero-section" id="inicio" aria-label="Punto de información y registro">
+      <section class="hero-section" id="inicio" aria-label="Contexto regional">
         <div class="hero-bg" role="img" aria-label="Paisaje del Valle del Cauca"></div>
-        <div class="hero-overlay"></div>
+        <div class="hero-ornament hero-ornament-left" aria-hidden="true"></div>
+        <div class="hero-ornament hero-ornament-right" aria-hidden="true"></div>
 
         <div class="hero-content">
-          <div class="hero-pin" aria-hidden="true">
-            <img src="img/map-pinned.png" alt="" />
-          </div>
-
-          <div class="hero-copy">
-            <h1>Punto de Información y Registro</h1>
-            <p>Cuéntanos qué necesitas estamos para ayudarte</p>
-          </div>
+          <h1>El Producto de Datos</h1>
+          <p>Visualiza y explora la información del sector</p>
         </div>
       </section>
 
-      <section class="main-panel" aria-label="Formulario de registro">
-        <form class="form-card" id="regionalForm" novalidate>
-          <h2>¿Qué estás buscando en tu próximo viaje?</h2>
+      <section class="dashboard" aria-label="Contexto regional del Valle del Cauca">
+        <div class="stats-grid">
+          <article class="stat-card stat-card--people">
+            <div class="stat-icon stat-icon--green">
+              <img src="img/bed-double.png" alt="" />
+            </div>
+            <div class="stat-copy">
+              <span class="stat-label">Total de prestadores</span>
+              <strong>1.248</strong>
+            </div>
+          </article>
 
-          <label class="field">
-            <span>Nombre completo</span>
-            <input type="text" name="nombre" placeholder="Ej: Juan Pérez García" required />
-          </label>
+          <article class="stat-card stat-card--service">
+            <div class="stat-icon stat-icon--purple">
+              <img src="img/Group.png" alt="" />
+            </div>
+            <div class="stat-copy">
+              <span class="stat-label">Servicio más común</span>
+              <strong>Alojamiento</strong>
+            </div>
+          </article>
 
-          <label class="field">
-            <span>Correo electrónico</span>
-            <input type="email" name="email" placeholder="Ej: ejemplo@correo.com" required />
-          </label>
+          <article class="stat-card stat-card--city">
+            <div class="stat-icon stat-icon--blue">
+              <img src="img/leaf.png" alt="" />
+            </div>
+            <div class="stat-copy">
+              <span class="stat-label">Municipio con más registros</span>
+              <strong>Cali</strong>
+            </div>
+          </article>
+        </div>
 
-          <label class="field">
-            <span>Tipo de visitante</span>
-            <select name="tipoVisitante" required>
-              <option value="">Selecciona una opción</option>
-              <option value="Turista">Turista</option>
-              <option value="Estudiante">Estudiante</option>
-              <option value="Empresario">Empresario</option>
-              <option value="Familia">Familia</option>
-            </select>
-          </label>
+        <div class="panels-grid">
+          <article class="panel panel--donut">
+            <h3>Prestadores por tipo de servicio</h3>
+            <div class="donut-layout">
+              <div class="donut-chart" aria-label="Gráfico circular por tipo de servicio">
+                <div class="donut-center"></div>
+              </div>
 
-          <label class="field">
-            <span>Tipo de servicio de interés</span>
-            <select name="tipoServicio" required>
-              <option value="">Selecciona una opción</option>
-              <option value="Hospedaje">Hospedaje</option>
-              <option value="Gastronomía">Gastronomía</option>
-              <option value="Transporte">Transporte</option>
-              <option value="Tour">Tour</option>
-              <option value="Cultura">Cultura</option>
-            </select>
-          </label>
+              <ul class="legend">
+                <li><span class="dot dot--green"></span>22%: Alojamiento</li>
+                <li><span class="dot dot--blue"></span>10%: Cultura</li>
+                <li><span class="dot dot--orange"></span>8%: Ecoturismo</li>
+                <li><span class="dot dot--gold"></span>18%: Gastronomía</li>
+                <li><span class="dot dot--red"></span>27%: Otros</li>
+                <li><span class="dot dot--brown"></span>15%: Transporte</li>
+              </ul>
+            </div>
+          </article>
 
-          <label class="field field-message">
-            <span>Mensaje o Comentario</span>
-            <textarea name="mensaje" rows="4" placeholder="Escribe aquí tu mensaje..."></textarea>
-          </label>
+          <article class="panel panel--bars">
+            <h3>Prestadores por municipio</h3>
+            <div class="bars-layout" aria-label="Gráfico de barras por municipio">
+              <div class="bar-group"><span class="bar-label">Cali</span><div class="bar bar--1" style="height: 72%"><span>412</span></div></div>
+              <div class="bar-group"><span class="bar-label">Buenaventura</span><div class="bar bar--2" style="height: 58%"><span>128</span></div></div>
+              <div class="bar-group"><span class="bar-label">Palmira</span><div class="bar bar--3" style="height: 41%"><span>94</span></div></div>
+              <div class="bar-group"><span class="bar-label">Buga</span><div class="bar bar--4" style="height: 35%"><span>87</span></div></div>
+              <div class="bar-group"><span class="bar-label">Cartago</span><div class="bar bar--5" style="height: 29%"><span>72</span></div></div>
+              <div class="bar-group"><span class="bar-label">Otros</span><div class="bar bar--6" style="height: 100%"><span>455</span></div></div>
+            </div>
+          </article>
 
-          <div class="required-note" aria-live="polite">Este campo es obligatorio</div>
+          <article class="panel panel--map">
+            <h3>Distribución en el Valle del Cauca</h3>
+            <div class="map-layout">
+              <div class="map-shell map-shell--clean">
+                <img src="img/mapa-departamento-valle-del-cauca-contorno.png" alt="Mapa del Valle del Cauca" />
+              </div>
+              <div class="map-legend">
+                <div class="legend-row"><span class="map-dot map-dot--blue"></span> Cali</div>
+                <div class="legend-row"><span class="map-dot map-dot--pink"></span> Buenaventura</div>
+                <div class="legend-row"><span class="map-dot map-dot--purple"></span> Yumbo</div>
+                <div class="legend-row"><span class="map-dot map-dot--orange"></span> Buga</div>
+                <div class="legend-row"><span class="map-dot map-dot--green"></span> Jamundí</div>
+                <div class="legend-row"><span class="map-dot map-dot--red"></span> Palmira</div>
+                <div class="legend-row"><span class="map-dot map-dot--brown"></span> Calima el Darién</div>
+                <div class="legend-row"><span class="map-dot map-dot--gold"></span> Otros</div>
+              </div>
+            </div>
+          </article>
 
-          <button type="submit" class="submit-button">Enviar</button>
-
-          <div class="form-status" id="formStatus" aria-live="polite"></div>
-        </form>
+          <article class="panel panel--matrix">
+            <h3>Matrices claves</h3>
+            <ul class="matrix-list">
+              <li>
+                <img src="img/bed-double.png" alt="" />
+                <div><strong>65%</strong> Alojamiento y gastronomía</div>
+              </li>
+              <li>
+                <img src="img/Group.png" alt="" />
+                <div><strong>35%</strong> Turismo cultural y recreativo</div>
+              </li>
+              <li>
+                <img src="img/leaf.png" alt="" />
+                <div><strong>10%</strong> Ecosistema y naturaleza</div>
+              </li>
+            </ul>
+          </article>
+        </div>
       </section>
     </main>
 
