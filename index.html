@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Descubre el turismo del Valle del Cauca." />
+    <title>Mi Pasaporte Turístico | Valle del Cauca</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Mi Pasaporte Turístico, inicio">
+        <img class="brand-mark" src="img/logo.png" alt="" />
+        <span class="brand-copy"><strong>Mi Pasaporte Turístico</strong><small>Call-Valle del Cauca</small></span>
+      </a>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#destino">Destino</a>
+        <a href="#datasets">Datasets</a>
+        <a href="#registro">Registro</a>
+        <a href="#nosotros">Nosotros</a>
+      </nav>
+      <button class="profile-button" aria-label="Abrir perfil">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="10" r="6.5" /><path d="M3.5 29c1-7 5.2-10.5 12.5-10.5S27.5 22 28.5 29" /></svg>
+      </button>
+      <button class="menu-button" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero-image" role="img" aria-label="Casa tradicional del Valle del Cauca rodeada de flores"></div>
+        <div class="hero-shade"></div>
+        <div class="hero-content">
+          <h1>Descubre el turismo del<br class="desktop-break" /> Valle del Cauca</h1>
+          <p class="hero-description">Un viaje por su gente, su cultura, sus paisajes y las<br class="desktop-break" /> oportunidades que impulsan su desarrollo regional<br class="desktop-break" /> sostenible.</p>
+        </div>
+        <div class="torn-edge" aria-hidden="true"></div>
+      </section>
+
+      <section class="quick-links" id="destino" aria-label="Accesos rápidos">
+        <a class="quick-link" href="#destino">
+          <span class="quick-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5 9 4l6 2 5-1.5v14L15 20l-6-2-5 1.5z" /><path d="M9 4v14M15 6v14" /></svg></span>
+          <span class="quick-title">Contexto Regional</span><span class="quick-subtitle">DESTINOS</span>
+        </a>
+        <a class="quick-link" href="#datasets" id="datasets">
+          <span class="quick-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19V11M12 19V5M19 19v-9" /></svg></span>
+          <span class="quick-title">Estadísticas de Viaje</span><span class="quick-subtitle">DATASETS</span>
+        </a>
+        <a class="quick-link" href="#registro" id="registro">
+          <span class="quick-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8" /><path d="M17 5v4M15 7h4M8 10h4M8 14h5M8 17h3" /><path d="m16 17 3.8-3.8 2 2L18 19l-2.5.5z" /></svg></span>
+          <span class="quick-title">Punto de Información y</span><span class="quick-title">Registro</span>
+        </a>
+        <a class="quick-link" href="#nosotros" id="nosotros">
+          <span class="quick-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3" /><path d="M3.5 19c.6-3.4 2.3-5 5.5-5s4.9 1.6 5.5 5" /><circle cx="17" cy="9" r="2.2" /><path d="M16 14.5c2.8-.1 4.4 1.4 4.8 4.5" /></svg></span>
+          <span class="quick-title">Equipo de Guías</span><span class="quick-subtitle">NOSOTROS</span>
+        </a>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

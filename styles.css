@@ -1,0 +1,104 @@
+:root {
+  --blue: #2b475d;
+  --beige: #f5ede0;
+  --white: #ffffff;
+  --green: #55b676;
+  --dark: #24313a;
+  --hero-height: min(565px, 73vh);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--dark); background: var(--beige); font-family: "Montserrat", sans-serif; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+
+.site-header {
+  align-items: center;
+  background: var(--blue);
+  color: var(--white);
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  padding: 0 28px 0 18px;
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 10;
+}
+.brand { align-items: center; display: flex; gap: 13px; min-width: 285px; }
+.brand-mark { display: block; height: 39px; object-fit: contain; width: 39px; }
+.brand-copy { display: flex; flex-direction: column; gap: 2px; }
+.brand-copy strong { font-size: 17px; font-weight: 800; letter-spacing: -.4px; line-height: 1; }
+.brand-copy small { color: rgba(255,255,255,.38); font-size: 11px; font-weight: 500; }
+.main-nav { align-items: center; display: flex; gap: 29px; margin-left: auto; margin-right: 35px; }
+.main-nav a { font-size: 17px; font-weight: 600; transition: opacity .2s ease; }
+.main-nav a:hover { opacity: .68; }
+.profile-button, .menu-button { background: transparent; border: 0; color: var(--white); cursor: pointer; padding: 0; }
+.profile-button svg { fill: none; height: 35px; stroke: var(--white); stroke-linecap: round; stroke-width: 1.25; width: 35px; }
+.menu-button { display: none; }
+
+.hero { height: var(--hero-height); min-height: 500px; overflow: hidden; position: relative; }
+.hero-image { background-image: url("img/fondovalle.png"); background-position: center 54%; background-size: cover; height: 100%; inset: 0; position: absolute; transform: scale(1.01); }
+.hero-shade { background: linear-gradient(90deg, rgba(16,24,28,.56) 0%, rgba(16,24,28,.24) 49%, rgba(16,24,28,.04) 100%); inset: 0; position: absolute; }
+.hero-content { color: var(--white); left: clamp(54px, 9.3vw, 142px); position: absolute; top: 132px; z-index: 2; }
+.eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; margin: 0 0 14px; opacity: .86; }
+h1 { font-size: clamp(39px, 4vw, 58px); letter-spacing: -2.2px; line-height: 1.02; margin: 0; max-width: 900px; }
+.hero-description { font-size: clamp(17px, 1.8vw, 25px); font-weight: 500; line-height: 1.45; margin: 23px 0 0; max-width: 780px; }
+.torn-edge { background: var(--beige); bottom: -1px; height: 81px; left: -2%; position: absolute; width: 104%; z-index: 3; clip-path: polygon(0 67%, 3% 61%, 5% 59%, 7% 49%, 10% 45%, 12% 40%, 15% 36%, 17% 34%, 19% 38%, 21% 31%, 23% 34%, 25% 31%, 27% 33%, 29% 45%, 31% 49%, 33% 54%, 35% 60%, 37% 67%, 39% 75%, 41% 73%, 43% 63%, 45% 54%, 47% 50%, 49% 43%, 51% 47%, 53% 48%, 55% 44%, 58% 48%, 60% 51%, 62% 45%, 64% 43%, 66% 39%, 68% 40%, 70% 45%, 73% 48%, 76% 49%, 79% 50%, 82% 50%, 84% 54%, 87% 55%, 90% 58%, 93% 61%, 96% 65%, 100% 68%, 100% 100%, 0 100%); }
+
+.quick-links { display: grid; gap: 19px; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 0 auto; max-width: 1090px; padding: 31px 20px 46px; position: relative; z-index: 4; }
+.quick-link { align-items: center; background: rgba(255,255,255,.96); border: 1px solid rgba(43,71,93,.08); border-radius: 17px; box-shadow: 0 7px 18px rgba(43,71,93,.08); display: flex; flex-direction: column; justify-content: center; min-height: 137px; padding: 16px 10px; text-align: center; transition: transform .2s ease, box-shadow .2s ease; }
+.quick-link:hover { box-shadow: 0 11px 25px rgba(43,71,93,.13); transform: translateY(-4px); }
+.quick-icon { align-items: center; background: #e8f6eb; border-radius: 50%; display: flex; height: 49px; justify-content: center; margin-bottom: 11px; width: 49px; }
+.quick-icon svg { fill: none; height: 24px; stroke: var(--green); stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; width: 24px; }
+.quick-title { color: #26333d; font-size: 12px; font-weight: 800; line-height: 1.22; }
+.quick-subtitle { color: #7a8790; font-size: 10px; font-weight: 600; line-height: 1.35; margin-top: 2px; }
+
+@media (max-width: 1120px) and (min-width: 801px) {
+  .site-header { padding-right: 20px; }
+  .brand { min-width: 250px; }
+  .main-nav { gap: 18px; margin-right: 20px; }
+  .main-nav a { font-size: 15px; }
+  .hero-content { left: 7vw; }
+  h1 { font-size: clamp(38px, 5.2vw, 56px); }
+  .hero-description { font-size: 20px; }
+}
+
+@media (max-width: 800px) {
+  :root { --hero-height: 610px; }
+  .site-header { padding: 0 18px; }
+  .brand { min-width: 0; }
+  .main-nav { background: var(--blue); border-top: 1px solid rgba(255,255,255,.13); box-shadow: 0 12px 20px rgba(20,34,44,.2); display: flex; flex-direction: column; gap: 0; left: 0; margin: 0; opacity: 0; padding: 8px 18px 13px; pointer-events: none; position: absolute; right: 0; top: 60px; transform: translateY(-8px); transition: opacity .2s ease, transform .2s ease; visibility: hidden; }
+  .main-nav.is-open { opacity: 1; pointer-events: auto; transform: translateY(0); visibility: visible; }
+  .main-nav a { font-size: 15px; padding: 12px 0; }
+  .profile-button { margin-left: auto; margin-right: 19px; }
+  .menu-button { display: flex; flex-direction: column; gap: 4px; }
+  .menu-button span { background: var(--white); display: block; height: 2px; width: 22px; }
+  .hero-content { left: 28px; right: 22px; top: 151px; }
+  h1 { font-size: clamp(35px, 10vw, 54px); letter-spacing: -1.8px; }
+  .hero-description { font-size: 17px; line-height: 1.5; }
+  .desktop-break { display: none; }
+  .torn-edge { height: 65px; }
+  .quick-links { gap: 12px; grid-template-columns: repeat(2, 1fr); padding: 22px 17px 35px; }
+  .quick-link { min-height: 128px; }
+}
+
+@media (max-width: 390px) {
+  .brand-copy strong { font-size: 14px; }
+  .brand-copy small { font-size: 9px; }
+  .brand-mark { height: 34px; width: 34px; }
+  .hero-content { top: 136px; }
+  .quick-title { font-size: 11px; }
+}
+
+@media (max-width: 350px) {
+  .site-header { padding-left: 12px; padding-right: 12px; }
+  .brand { gap: 8px; }
+  .brand-copy strong { font-size: 12px; }
+  .brand-copy small { font-size: 8px; }
+  .profile-button { margin-right: 12px; }
+  .hero-content { left: 20px; right: 18px; }
+  h1 { font-size: 34px; }
+  .hero-description { font-size: 15px; }
+  .quick-links { padding-left: 12px; padding-right: 12px; }
+}
