@@ -1,6 +1,153 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Datasets | Mi Pasaporte Turístico</title><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" /><link rel="stylesheet" href="styles.css" /><style>.hero-icon{width:105px;height:105px;fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.7}</style></head>
-<body><header class="site-header"><a class="brand" href="index.html"><span class="brand-mark"><img src="img/logo.png" alt="" /></span><span class="brand-copy"><strong>Mi Pasaporte Turístico</strong><small>Cali-Valle del Cauca</small></span></a><nav class="main-nav" aria-label="Navegación principal"><a href="index.html">Inicio</a><a href="destino.html">Destino</a><a href="datasets.html">Datasets</a><a href="registro.html">Registro</a><a href="nosotros.html">Nosotros</a></nav><button class="profile-button" type="button" aria-label="Ir a contacto"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="10" r="6.5" /><path d="M3.5 29c1-7 5.2-10.5 12.5-10.5S27.5 22 28.5 29" /></svg></button><button class="menu-button" type="button" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button></header>
-<main class="dataset-page"><div class="section-hero dataset-hero"><div class="section-hero-content"><svg class="hero-icon" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="37" /><path d="M63 29 38 42l-8 29 25-13 8-29Z" /><path d="m38 42 17 16" /></svg><div><h2>Obtención y Descripción del Dataset</h2><p>Datos abiertos para analizar el turismo de la región</p></div></div></div><div class="dataset-shell"><div class="dataset-top"><article class="panel source-panel"><h3>◉ Fuente de los datos</h3><strong>Datos Abiertos Colombia</strong><p>Plataforma del Gobierno Nacional que pone a disposición información pública de diferentes sectores.</p><a href="https://datos.gov.co/" target="_blank" rel="noreferrer">Ir a la fuente →</a></article><article class="panel logo-panel"><img src="img/images (1).jpg" alt="Datos Abiertos Colombia" /></article></div><div class="dataset-bottom"><article class="panel meta-panel"><h3>Metadatos del dataset</h3><dl><dt>Origen</dt><dd>Datos Abiertos Colombia</dd><dt>Número de registros</dt><dd>1.248</dd><dt>Número de variables</dt><dd>5</dd><dt>Última actualización</dt><dd>2024-12-15</dd><dt>Tipo de información</dt><dd>Prestadores de servicios turísticos</dd></dl></article><article class="panel table-panel"><h3>Descripción de las columnas</h3><div class="table-wrap"><table><thead><tr><th>Campo / Atributo</th><th>Tipo de dato</th><th>Descripción</th></tr></thead><tbody><tr><td>nombre</td><td>Texto</td><td>Nombre del prestador de servicio</td></tr><tr><td>municipio</td><td>Texto</td><td>Municipio donde se encuentra</td></tr><tr><td>tipo_servicio</td><td>Texto</td><td>Tipo de servicio turístico ofrecido</td></tr><tr><td>departamento</td><td>Texto</td><td>Departamento</td></tr><tr><td>estado</td><td>Texto</td><td>Estado del registro</td></tr></tbody></table></div><div class="action-row"><button class="data-button" data-action="view">◉ Ver datos</button><button class="data-button success" data-action="csv">↓ Descargar CSV</button><button class="data-button violet" data-action="json">↓ Descargar JSON</button></div></article></div></div></main><script src="script.js"></script></body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Visualización de estadísticas y análisis del turismo en el Valle del Cauca.">
+
+    <title>Estadísticas Turísticas | Mi Pasaporte Turístico</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <main class="page-shell">
+
+        <header class="site-header">
+            <div class="brand" aria-label="Mi Pasaporte Turístico">
+                <div class="brand-mark-wrap">
+                    <img src="img/logo.png" alt="Mi Pasaporte Turístico">
+                </div>
+
+                <div class="brand-text">
+                    <strong>Mi Pasaporte Turístico</strong>
+                    <small>Valle del Cauca</small>
+                </div>
+            </div>
+
+            <nav class="main-nav" aria-label="Navegación principal">
+                <a href="index.html#inicio">Inicio</a>
+                <a href="destino.html">Destino</a>
+                <a href="datasets.html">Datasets</a>
+                <a href="registro.html">Registro</a>
+                <a href="nosotros.html">Nosotros</a>
+            </nav>
+
+            <button class="profile-button" aria-label="Abrir perfil">
+                <svg viewBox="0 0 32 32" aria-hidden="true">
+                    <circle cx="16" cy="10" r="6.5"/>
+                    <path d="M3.5 29c1-7 5.2-10.5 12.5-10.5S27.5 22 28.5 29"/>
+                </svg>
+            </button>
+            <button class="menu-button" type="button" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </header>
+
+        <section class="datasets-section" id="datasets">
+
+            <div class="datasets-heading">
+                <span class="datasets-eyebrow">Datos y estadísticas</span>
+
+                <h1>Análisis turístico del Valle del Cauca</h1>
+
+                <p>
+                    Explora las estadísticas relacionadas con el turismo
+                    en nuestra región. A través de estas visualizaciones
+                    podrás conocer el comportamiento de los visitantes,
+                    sus lugares de procedencia y las características
+                    de los establecimientos turísticos.
+                </p>
+            </div>
+
+            <div class="powerbi-card">
+
+                <div class="powerbi-card-heading">
+                    <div>
+                        <h2>Dashboard de turismo</h2>
+                        <p>
+                            Visualización interactiva de los datos turísticos
+                            del Valle del Cauca.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="powerbi-container">
+                    <iframe
+                        title="Power BI - Estadísticas turísticas"
+                        src="https://app.powerbi.com/view?r=eyJrIjoiMWMzY2FkZTEtNTdmZS00NWM5LWFhOTItZjM5NDRjZDlkNWZmIiwidCI6IjZjYTM0YWUxLTQ2NmYtNDRiYy1hN2FhLTBhYzVhNzhjNjFiMSIsImMiOjR9"
+                        allowfullscreen="true">
+                    </iframe>
+                </div>
+
+                <p class="powerbi-note">
+                    Puedes interactuar con las gráficas para consultar
+                    y explorar la información presentada.
+                </p>
+
+            </div>
+
+            <div class="datasets-information">
+
+                <h2>Fuentes de información</h2>
+
+                <p>
+                    El análisis se construyó a partir de conjuntos de datos
+                    abiertos relacionados con la actividad turística
+                    del Valle del Cauca.
+                </p>
+
+                <div class="sources-grid">
+
+                    <article class="source-card">
+                        <h3>Turismo receptivo en el Valle del Cauca</h3>
+                        <p>
+                            Información sobre los visitantes, sus lugares
+                            de procedencia, motivos de viaje, transporte,
+                            alojamiento y gastos.
+                        </p>
+                    </article>
+
+                    <article class="source-card">
+                        <h3>Extranjeros no residentes</h3>
+                        <p>
+                            Registros de llegada de visitantes extranjeros,
+                            clasificados por año, mes, departamento,
+                            ciudad y país de residencia.
+                        </p>
+                    </article>
+
+                    <article class="source-card">
+                        <h3>Establecimientos con Registro Nacional de Turismo</h3>
+                        <p>
+                            Información sobre los establecimientos
+                            turísticos registrados, sus categorías,
+                            municipios, habitaciones, camas y empleados.
+                        </p>
+                    </article>
+
+                </div>
+
+                <p class="sources-note">
+                    Fuentes:
+                    <a href="https://datosabiertos.valledelcauca.gov.co/es/dataset/turismo-receptivo-en-el-valle-del-cauca" target="_blank" rel="noreferrer">Gobernación del Valle del Cauca</a>,
+                    <a href="https://www.datos.gov.co/Comercio-Industria-y-Turismo/Extranjeros-No-Residentes/7wm8-w5ad" target="_blank" rel="noreferrer">Datos Abiertos - Extranjeros no residentes</a>
+                    y
+                    <a href="https://www.datos.gov.co/Comercio-Industria-y-Turismo/Establecimientos-con-Registro-Nacional-del-Sector-/96r6-c6gb" target="_blank" rel="noreferrer">Datos Abiertos - Establecimientos turísticos</a>.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
 </html>
